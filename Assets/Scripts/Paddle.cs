@@ -11,7 +11,7 @@ public class Paddle : MonoBehaviour
         Debug.Log("Empezando a trabajar en el script del 'Paddle'");
         Debug.Log($"Posición inicial {transform.position}");
         // transform.position += new Vector3(-1, 0, 0);
-        transform.position += Vector3.right;
+        // transform.position += Vector3.right;
     }
 
     // Update is called once per frame
