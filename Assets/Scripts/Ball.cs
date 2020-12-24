@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     {
         // _rigidbody2D = GetComponent<Rigidbody2D>();
         // No Usamos deltaTime al no estar dentro de Update
-        _rigidbody2D.velocity = Vector2.up * _speed;
+        // _rigidbody2D.velocity = Vector2.up * _speed;
         gameManager = FindObjectOfType<GameManager>();
     }
 

@@ -2496,6 +2496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c97f3571439640e2b0724ddc26f5b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerLives: 4
+  _bricksOnLevel: 0
 --- !u!4 &1388537835
 Transform:
   m_ObjectHideFlags: 0
@@ -3492,7 +3494,7 @@ PrefabInstance:
     - target: {fileID: 3716078556193841168, guid: 35f408b6d532c4fcf8002e9959294ae7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.75
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: 3716078556193841168, guid: 35f408b6d532c4fcf8002e9959294ae7,
         type: 3}
@@ -3547,7 +3549,7 @@ PrefabInstance:
     - target: {fileID: 3716078556193841171, guid: 35f408b6d532c4fcf8002e9959294ae7,
         type: 3}
       propertyPath: m_TagString
-      value: Limit
+      value: DeathLimit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f408b6d532c4fcf8002e9959294ae7, type: 3}

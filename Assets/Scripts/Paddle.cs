@@ -27,5 +27,10 @@ public class Paddle : MonoBehaviour
         {
             transform.position += Time.deltaTime * Vector3.left * _speed;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
     }
 }
