@@ -7,6 +7,10 @@ public class Ball : MonoBehaviour
     // Mantiene como variable privada dentro de la clase pero podemos
     // modificar dentro del Inspector
     [SerializeField] Rigidbody2D _rigidbody2D;
+
+    // Para controlar el rebote y determinar su dirección y velocidad
+    private Vector2 _moveDirection;
+    private Vector2 _currenVelocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +24,30 @@ public class Ball : MonoBehaviour
         
     }
 
+    /*
+     Método de Unity que se usa parahacer cálculos con el motor de física
+     */
+    void FixedUpdate()
+    {
+        // Extraer la velocidad por frame, en este caso para conocer la última
+        // velocidad antes del impacto
+        _currenVelocity = _rigidbody2D.velocity;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Colisiona la pelota con " + collision.transform.name);
+        /*
+         * Para asignarle la velocidad y dirección que tomará cuando haga la colisión
+         * Necesitamos:
+         * - La velocidad actual
+         * - La "normal" del polígono en el que se hace el contacto
+         * ("normal" = vector perpendícular a una superficie, es decir, un vector que crea 
+         * un ángulo de 90º con respecto a la base de un polígono)
+         */
+        _moveDirection = Vector2.Reflect(_currenVelocity, collision.GetContact(0).normal);
+
+        // Asignamos a la velocidad del rigidbody
+        _rigidbody2D.velocity = _moveDirection;
     }
 }
