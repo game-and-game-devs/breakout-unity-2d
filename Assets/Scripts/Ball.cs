@@ -39,7 +39,14 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Colisiona la pelota con " + collision.transform.name);
+        Debug.Log("Colisiona la pelota con " + collision.transform);
+
+        
+        if (collision.transform.CompareTag("DeathLimit"))
+        {
+            Debug.Log("Abajo");
+            Destroy(gameObject);
+        }
         /*
          * Para asignarle la velocidad y dirección que tomará cuando haga la colisión
          * Necesitamos:
