@@ -11,11 +11,14 @@ public class Ball : MonoBehaviour
     // Para controlar el rebote y determinar su dirección y velocidad
     private Vector2 _moveDirection;
     private Vector2 _currenVelocity;
+
+    [SerializeField] float _speed = 4;
     // Start is called before the first frame update
     void Start()
     {
         // _rigidbody2D = GetComponent<Rigidbody2D>();
-        _rigidbody2D.velocity = Vector2.up;
+        // No Usamos deltaTime al no estar dentro de Update
+        _rigidbody2D.velocity = Vector2.up * _speed;
     }
 
     // Update is called once per frame

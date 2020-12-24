@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    float speed = 3;
+    [SerializeField] float _speed = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +19,11 @@ public class Paddle : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             // Añadir Time.deltaTime para ajustar la velocidad de desplazamiento
-            transform.position += Time.deltaTime * Vector3.right * speed;
+            transform.position += Time.deltaTime * Vector3.right * _speed;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += Time.deltaTime * Vector3.left * speed;
+            transform.position += Time.deltaTime * Vector3.left * _speed;
         }
     }
 }
