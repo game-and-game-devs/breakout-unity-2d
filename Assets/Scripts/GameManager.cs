@@ -4,7 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private byte _bricksOnLevel;
+    [SerializeField] byte _playerLives = 4;
+    [SerializeField] byte _bricksOnLevel;
+    public byte PlayerLives
+    {
+        get => _playerLives;
+        set
+        {
+            _playerLives = value;
+            if (_playerLives == 0)
+            {
+                Debug.Log("Juego perdido");
+                Destroy(GameObject.Find("Ball"));
+            }
+
+        }
+    }
     public byte BricksOnLevel
     {
         get => _bricksOnLevel;

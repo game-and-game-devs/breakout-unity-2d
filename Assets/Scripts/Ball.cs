@@ -13,12 +13,14 @@ public class Ball : MonoBehaviour
     private Vector2 _currenVelocity;
 
     [SerializeField] float _speed = 4;
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         // _rigidbody2D = GetComponent<Rigidbody2D>();
         // No Usamos deltaTime al no estar dentro de Update
         _rigidbody2D.velocity = Vector2.up * _speed;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -41,12 +43,6 @@ public class Ball : MonoBehaviour
     {
         Debug.Log("Colisiona la pelota con " + collision.transform);
 
-        
-        if (collision.transform.CompareTag("DeathLimit"))
-        {
-            Debug.Log("Abajo");
-            Destroy(gameObject);
-        }
         /*
          * Para asignarle la velocidad y dirección que tomará cuando haga la colisión
          * Necesitamos:
@@ -59,5 +55,14 @@ public class Ball : MonoBehaviour
 
         // Asignamos a la velocidad del rigidbody
         _rigidbody2D.velocity = _moveDirection;
+        if (collision.transform.CompareTag("DeathLimit"))
+        {
+            Debug.Log("Abajo");
+            // Destroy(gameObject);
+            if(gameManager != null)
+            {
+                gameManager.PlayerLives--;
+            }
+        }
     }
 }
