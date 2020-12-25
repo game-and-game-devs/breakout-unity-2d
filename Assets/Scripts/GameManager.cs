@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Has ganado el nivel");
                 Destroy(GameObject.Find("Ball"));
                 // TODO Mostrar pantalla de victoria
-                // TODO Medir tiempo de juego
                 _gameTime = Time.time - _gameTime;
                 Debug.Log("Tiempo final: " + _gameTime);
             }
