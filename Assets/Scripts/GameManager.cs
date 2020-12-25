@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private float _gameTime = 0;
     [SerializeField] bool _gameStarted;
     public bool GameStarted
     {
         get => _gameStarted;
-        set => _gameStarted = value;
+        set
+        {
+            _gameStarted = value;
+            _gameTime = Time.time;
+        }
     }
     [SerializeField] bool _ballOnPlay;
     public bool BallOnPlay
@@ -56,6 +61,8 @@ public class GameManager : MonoBehaviour
                 Destroy(GameObject.Find("Ball"));
                 // TODO Mostrar pantalla de victoria
                 // TODO Medir tiempo de juego
+                _gameTime = Time.time - _gameTime;
+                Debug.Log("Tiempo final: " + _gameTime);
             }
         }
     }
