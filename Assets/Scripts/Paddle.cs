@@ -5,6 +5,7 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     [SerializeField] float _speed = 3;
+    private float _xLimit = 7.4f;
     private GameManager _gameManager;
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,12 @@ public class Paddle : MonoBehaviour
     void Update()
     {
         // Debug.Log("Estoy en el método Update actualizándome una y otra vez");
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < _xLimit)
         {
             // Añadir Time.deltaTime para ajustar la velocidad de desplazamiento
             transform.position += Time.deltaTime * Vector3.right * _speed;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -_xLimit)
         {
             transform.position += Time.deltaTime * Vector3.left * _speed;
         }

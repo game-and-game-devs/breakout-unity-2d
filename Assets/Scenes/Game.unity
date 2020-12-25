@@ -404,7 +404,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.21, z: 0}
   m_LocalScale: {x: 8, y: 2, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1884822545}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,12 +447,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.06973818, y: 0.06680621}
-      - {x: -0.07083764, y: -0.07706804}
-      - {x: 0.0698691, y: -0.07706804}
-      - {x: 0.069738165, y: -0.06439795}
-      - {x: 0.06973816, y: 0.06706803}
-      - {x: -0.00034066662, y: 0.08439794}
+    - - {x: -0.06640194, y: 0.056797642}
+      - {x: -0.06666733, y: -0.05705065}
+      - {x: 0.06403072, y: -0.06038684}
+      - {x: 0.06556792, y: -0.041044373}
+      - {x: 0.068070084, y: 0.057059463}
+      - {x: 0.0004933686, y: 0.07772556}
 --- !u!1001 &240046242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2385,7 +2386,7 @@ Transform:
   - {fileID: 1373492531}
   - {fileID: 1637539819}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1370406926
 PrefabInstance:
@@ -2496,6 +2497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c97f3571439640e2b0724ddc26f5b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameStarted: 0
+  _ballOnPlay: 0
   _playerLives: 4
   _bricksOnLevel: 0
 --- !u!4 &1388537835
@@ -2510,7 +2513,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1445218166
 PrefabInstance:
@@ -3011,7 +3014,7 @@ Transform:
   - {fileID: 1966254699}
   - {fileID: 259731456}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1757830536
 PrefabInstance:
@@ -3196,12 +3199,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884822543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.23, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.49, z: 0}
+  m_LocalScale: {x: 0.1875, y: 0.75, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 193665769}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1884822546
 CircleCollider2D:
