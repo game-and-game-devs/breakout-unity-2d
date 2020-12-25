@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] bool _gameStarted;
+    public bool GameStarted
+    {
+        get => _gameStarted;
+        set => _gameStarted = value;
+    }
+    [SerializeField] bool _ballOnPlay;
+    public bool BallOnPlay
+    {
+        get => _ballOnPlay;
+        set {
+            _ballOnPlay = value;
+            if (_ballOnPlay)
+            {
+                Debug.Log("Empezamos a lanzar la bola");
+                FindObjectOfType<Ball>().LaunchBall();
+            }
+        }
+    }
     [SerializeField] byte _playerLives = 4;
-    [SerializeField] byte _bricksOnLevel;
     public byte PlayerLives
     {
         get => _playerLives;
@@ -20,6 +38,7 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    [SerializeField] byte _bricksOnLevel;
     public byte BricksOnLevel
     {
         get => _bricksOnLevel;
@@ -34,16 +53,5 @@ public class GameManager : MonoBehaviour
                 // TODO Medir tiempo de juego
             }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

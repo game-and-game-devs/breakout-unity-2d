@@ -5,11 +5,13 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     [SerializeField] float _speed = 3;
+    private GameManager _gameManager;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Empezando a trabajar en el script del 'Paddle'");
         Debug.Log($"Posición inicial {transform.position}");
+        _gameManager = FindObjectOfType<GameManager>();
         // transform.position += new Vector3(-1, 0, 0);
         // transform.position += Vector3.right;
     }
@@ -30,7 +32,16 @@ public class Paddle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            // Bola en juego
+            if (_gameManager.BallOnPlay == false)
+            {
+                _gameManager.BallOnPlay = true;
+            }
+            // Partida en juego
+            if (_gameManager.GameStarted == false)
+            {
+                _gameManager.GameStarted = true;
+            }
         }
     }
 }

@@ -65,4 +65,12 @@ public class Ball : MonoBehaviour
             }
         }
     }
+
+    public void LaunchBall()
+    {
+        // Para no depender de su padre (Paddle) al soltar la bola
+        // Si no se moverá con ello a la vez
+        transform.SetParent(null);
+        _rigidbody2D.velocity = Vector2.up * _speed;
+    }
 }
