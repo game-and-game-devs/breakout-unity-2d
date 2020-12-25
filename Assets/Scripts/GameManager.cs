@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
             if (_ballOnPlay)
             {
                 Debug.Log("Empezamos a lanzar la bola");
-                FindObjectOfType<Ball>().LaunchBall();
+                FindObjectOfType<Ball>().Launch();
             }
         }
     }
@@ -30,10 +30,15 @@ public class GameManager : MonoBehaviour
         set
         {
             _playerLives = value;
+            
             if (_playerLives == 0)
             {
                 Debug.Log("Juego perdido");
                 Destroy(GameObject.Find("Ball"));
+            } else
+            {
+                Debug.Log("Vidas: " + _playerLives);
+                FindObjectOfType<Ball>().Reset();
             }
 
         }

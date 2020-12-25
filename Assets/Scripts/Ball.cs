@@ -62,15 +62,32 @@ public class Ball : MonoBehaviour
             if(gameManager != null)
             {
                 gameManager.PlayerLives--;
+                // Reset();
             }
         }
     }
 
-    public void LaunchBall()
+    public void Launch()
     {
         // Para no depender de su padre (Paddle) al soltar la bola
         // Si no se moverá con ello a la vez
         transform.SetParent(null);
         _rigidbody2D.velocity = Vector2.up * _speed;
+    }
+
+    public void Reset()
+    {
+        // Ponerlo en Vector zero
+        _rigidbody2D.velocity = Vector2.zero;
+        // Obtenemos la pala
+        Transform transformPaddle = GameObject.Find("Paddle").transform;
+        transform.SetParent(transformPaddle);
+        // Asignamos la posición de la pala a la bola
+        Vector2 ballPosition = transformPaddle.position;
+        // Movemos la bola un poco verticalmente
+        ballPosition.y += 0.3f;
+        transform.position = ballPosition;
+        // Paramos el juego
+        gameManager.BallOnPlay = false;
     }
 }
