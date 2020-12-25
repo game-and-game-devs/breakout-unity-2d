@@ -5,7 +5,7 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     [SerializeField] float _speed = 3;
-    private float _xLimit = 7.4f;
+    private float _xLimit = 6.9f;
     private GameManager _gameManager;
     // Start is called before the first frame update
     void Start()
