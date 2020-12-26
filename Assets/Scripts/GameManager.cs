@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Juego perdido");
                 Destroy(GameObject.Find("Ball"));
+                // Mostrar pantalla de derrota
+                FindObjectOfType<UIController>().ActivePanel(FinishGameStateEnum.LOSE);
             } else
             {
                 Debug.Log("Vidas: " + _playerLives);
@@ -59,9 +61,11 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Has ganado el nivel");
                 Destroy(GameObject.Find("Ball"));
-                // TODO Mostrar pantalla de victoria
+                // Mostrar pantalla de victoria
+                FindObjectOfType<UIController>().ActivePanel(FinishGameStateEnum.WIN);
                 _gameTime = Time.time - _gameTime;
                 Debug.Log("Tiempo final: " + _gameTime);
+
             }
         }
     }
