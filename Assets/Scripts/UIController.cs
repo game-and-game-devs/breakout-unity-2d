@@ -7,8 +7,8 @@ public class UIController : MonoBehaviour
     [SerializeField] GameObject _winnerPanel;
     public void ActivePanel(FinishGameStateEnum optionSelect)
     {
-        _losePanel.SetActive(optionSelect.Equals("LOSE"));
-        _winnerPanel.SetActive(optionSelect.Equals("WIN"));
+        _winnerPanel.SetActive(optionSelect.ToString() == "WIN");
+        _losePanel.SetActive(optionSelect.ToString() == "LOSE");
     }
 
     public void Restart()
