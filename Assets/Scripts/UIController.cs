@@ -16,4 +16,10 @@ public class UIController : MonoBehaviour
         Debug.Log("Reiniciando el juego");
         SceneManager.LoadScene("Game");
     }
+
+    public void GoToMainMenu()
+    {
+        Debug.Log("Ir al inicio de juego");
+        SceneManager.LoadScene("MainMenu");
+    }
 }
