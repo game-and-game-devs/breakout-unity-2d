@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
         if (optionSelect.ToString() == "WIN")
         {
             _winnerPanel.SetActive(true);
-            _gameTimeText.text = string.Format("Tiempo final: {0}", gameTime);
+            _gameTimeText.text = string.Format("Tiempo final: {0} seconds", Math.Floor(gameTime));
         } else
         {
             _losePanel.SetActive(true);
@@ -44,10 +44,5 @@ public class UIController : MonoBehaviour
                 _livesImages[i].SetActive(false);
             }
         }
-    }
-
-    public void ShowGameTime(float currentTime)
-    {
-        _gameTimeText.text = Convert.ToString(currentTime);
     }
 }

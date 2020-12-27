@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
@@ -13,8 +11,6 @@ public class Paddle : MonoBehaviour
         Debug.Log("Empezando a trabajar en el script del 'Paddle'");
         Debug.Log($"Posición inicial {transform.position}");
         _gameManager = FindObjectOfType<GameManager>();
-        // transform.position += new Vector3(-1, 0, 0);
-        // transform.position += Vector3.right;
     }
 
     // Update is called once per frame

@@ -23,12 +23,6 @@ public class Ball : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /*
      Método de Unity que se usa parahacer cálculos con el motor de física
      */
@@ -58,11 +52,9 @@ public class Ball : MonoBehaviour
         if (collision.transform.CompareTag("DeathLimit"))
         {
             Debug.Log("Abajo");
-            // Destroy(gameObject);
             if(gameManager != null)
             {
                 gameManager.PlayerLives--;
-                // Reset();
             }
         }
     }
