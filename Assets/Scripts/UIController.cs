@@ -7,7 +7,19 @@ public class UIController : MonoBehaviour
     [SerializeField] GameObject _losePanel;
     [SerializeField] GameObject _winnerPanel;
     [SerializeField] GameObject[] _livesImages;
+    [SerializeField] GameObject[] _bricksTypes;
     [SerializeField] Text _gameTimeText;
+
+    private void Start()
+    {
+        // Load bricks to crash with ball dinamically
+        for (int i = 0; i < 5; i++) // lines
+        {
+            for (int j = 0; j < 7; j++) { // columns
+                Instantiate(_bricksTypes[i], new Vector2(-6 + (2 * j), -0.5f + i), Quaternion.identity);
+            }
+        }
+    }
     public void ActivePanel(FinishGameStateEnum optionSelect, float gameTime = 0)
     {
         if (optionSelect.ToString() == "WIN")
@@ -45,4 +57,6 @@ public class UIController : MonoBehaviour
             }
         }
     }
+
+   
 }

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System;
 
 public class GameManager : MonoBehaviour
 {
+
     private float _gameTime = 0;
     [SerializeField] bool _gameStarted;
     public bool GameStarted
@@ -68,5 +68,17 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Tiempo final: " + _gameTime);
             }
         }
+    }
+
+    void Start()
+    {
+        // Start columns in screen
+        for (int i = 0; i <= 7; i++)
+        {
+            // Instantiate(_rockSmall, new Vector2(18, -1.5f), Quaternion.identity));
+        }
+
+        // Start obstacles
+        // Instantiate(_rockSmall, new Vector2(18, -1.5f), Quaternion.identity));
     }
 }
