@@ -3,7 +3,7 @@
 public class Paddle : MonoBehaviour
 {
     [SerializeField] float _speed = 3;
-    private readonly float _xLimit = 7.15f;
+    [SerializeField] float _xLimit = 6.9f;
     private GameManager _gameManager;
     // Start is called before the first frame update
     void Start()
