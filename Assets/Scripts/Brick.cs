@@ -16,6 +16,7 @@ public class Brick : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
         // Añadimos la comprobación para asegurarnos que cargamos correctamente el
         // el gameManager Object
         if (gameManager != null)
