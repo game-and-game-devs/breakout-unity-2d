@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
 public class Brick : MonoBehaviour
-{    GameManager gameManager;
+{   GameManager gameManager;
+    [SerializeField] GameObject _explosionPrefab;
     // Start is called before the first frame update
-    void Start()
+        void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         if (gameManager != null)
